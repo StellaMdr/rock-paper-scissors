@@ -1,0 +1,267 @@
+    :root {
+      --bg-color: #f6f3ed;
+      --primary-red: #dc4335;
+      --dark-ink: #1a1a1a;
+      --card-yellow: #ebd073;
+      --card-salmon: #ee9e8e;
+      --card-blue: #a4b7e5;
+      --icon-gray: #6b6b6b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark-ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    /* Header Styling */
+    .header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+      line-height: 0.95;
+    }
+
+    .title-top {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2.75rem;
+      color: var(--dark-ink);
+      letter-spacing: -0.02em;
+    }
+
+    .title-bottom {
+      font-family: 'DM Sans', sans-serif;
+      font-style: italic;
+      font-weight: 800;
+      font-size: 3.1rem;
+      color: var(--primary-red);
+      letter-spacing: -0.03em;
+    }
+
+    /* Main Game Container */
+    .game-board {
+      background-color: var(--bg-color);
+      border: 2px solid var(--dark-ink);
+      border-radius: 20px;
+      box-shadow: 6px 6px 0px var(--dark-ink);
+      width: 100%;
+      max-width: 780px;
+      padding: 2.75rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .prompt-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* Choice Cards Grid */
+    .choices-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .choice-card {
+      border: 1.5px solid var(--dark-ink);
+      border-radius: 14px;
+      box-shadow: 4px 4px 0px var(--dark-ink);
+      padding: 1.75rem 1rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+      background-color: #fff;
+    }
+
+    .choice-card:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 5px 5px 0px var(--dark-ink);
+    }
+
+    .choice-card:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0px var(--dark-ink);
+    }
+
+    .choice-card.rock {
+      background-color: var(--card-yellow);
+    }
+
+    .choice-card.paper {
+      background-color: var(--card-salmon);
+    }
+
+    .choice-card.scissors {
+      background-color: var(--card-blue);
+    }
+
+    .choice-icon {
+      width: 68px;
+      height: 68px;
+      margin-bottom: 1rem;
+      fill: var(--icon-gray);
+    }
+
+    .choice-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #4a4a4a;
+      text-transform: uppercase;
+    }
+
+    /* Rules Subtext */
+    .rules-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Scoreboard */
+    .scoreboard {
+      background-color: var(--dark-ink);
+      border-radius: 14px;
+      width: 100%;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-bottom: 1.75rem;
+    }
+
+    .score-side {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .player-label {
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .score-number {
+      font-size: 3.25rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-you {
+      color: var(--card-yellow);
+    }
+
+    .score-computer {
+      color: var(--card-blue);
+    }
+
+    .score-badge {
+      background-color: var(--bg-color);
+      color: var(--dark-ink);
+      border-radius: 20px;
+      padding: 0.65rem 0.35rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .score-badge span {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .score-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--dark-ink);
+      border-radius: 50%;
+    }
+
+    /* Result Status Message */
+    .result-message {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--primary-red);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Play Again Button */
+    .play-again-btn {
+      background-color: var(--primary-red);
+      color: #ffffff;
+      border: 1.5px solid var(--dark-ink);
+      border-radius: 999px;
+      box-shadow: 0px 4px 0px var(--dark-ink);
+      padding: 0.85rem 2.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .play-again-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0px 5px 0px var(--dark-ink);
+    }
+
+    .play-again-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0px 1px 0px var(--dark-ink);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      .title-top { font-size: 2.1rem; }
+      .title-bottom { font-size: 2.3rem; }
+      .game-board { padding: 2rem 1.25rem; }
+      .choices-container { gap: 0.75rem; }
+      .choice-card { padding: 1.25rem 0.5rem 1rem; }
+      .choice-icon { width: 48px; height: 48px; }
+      .scoreboard { padding: 1rem; }
+      .score-number { font-size: 2.5rem; }
+    }
